@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slot</title>
+    <style>
+     .fig {
+      text-align: center;
+     }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <p><img src="https://seeklogo.com/images/S/spring-logo-9A2BC78AAF-seeklogo.com.png" alt="" style="width:50px;"></p>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="/FAQs" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="/About" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <a href="/new" class="nav-link px-2 text-white">Add slot</a>
+        </form>
+
+      </div>
+    </div>
+</header>
+              <div class="card shadow-sm">
+
+<!--                 <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                <div class="card-body">
+                <p class="fig"> <img  th:src="${pic.getPicture()}" style="width:350px;"/></p>
+                <h4>
+                  <p style="text-indent:300px" class="card-text" th:text="${pic.getTitle()}">title</p>
+                  <p style="text-indent:300px" class="card-text" th:text="${pic.getDescription()}">description</p>
+                  <p style="text-indent:300px" class="card-text"><span th:text="${pic.getCost()}">cost</span> $</p>
+                  </h4>
+                  <h2>
+                  <br/>
+                  <br/>
+                  <hr/>
+                  <div class style="text-align:center;">
+                  <p class="card-text" style="text-align:center;">To buy a product write to our manager this product id - <span style="color:red" th:text="${pic.getId()}">id</span></p>
+                  <p class="card-text" style="text-align:center;">Telegram - @ShopExample</p>
+                  </div>
+                  </h2>
+<!--                   <a th:href="@{/{id}/edit(id=${pic.getId()})}">Edit</a> -->
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+<div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/FAQs" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="/About" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted"><a href="https://vk.com/jopastiy228" class="text-center text-muted">2022 Nikita Shlyapnikov</a></p>
+  </footer>
+</div>
+<!-- <p th:text="${person.getName()}">VALUE</p> -->
+<!-- <p th:text="${person.getId()}">VALUE</p> -->
+<!-- <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a> -->
+<!-- <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}"> -->
+<!--     <input type="submit" value="DeletePacika("/> -->
+<!-- </form> -->
+</body>
+</html>
